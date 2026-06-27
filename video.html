@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto Play Vertical Videos</title>
+
+<style>
+body{
+    margin:0;
+    background:rgb(116, 85, 20);
+}
+
+video{
+    width:100%;
+    height:70vh;
+    object-fit:center;
+    display:block;
+}
+h1{
+    text-align: center;
+    font-size: 80;
+    color: white;
+}
+</style>
+ <h1>☕ Coffee House!</h1>
+</head>
+<body>
+
+<video muted playsinline>
+    <source src="1.mp4" type="video/mp4">
+</video>
+<h1>Serving a sparkling cappuccino in a cup</h1>
+
+<video muted playsinline>
+    <source src="4.mp4" type="video/mp4">
+</video>
+<h1>Milk being poured into a mug with coffee, creating latte art.</h1>
+
+<video muted playsinline>
+    <source src="2.mp4" type="video/mp4">
+</video>
+<h1>Coffee beans falling on a layer of more beans</h1>
+
+<video muted playsinline>
+    <source src="3.mp4" type="video/mp4">
+</video>
+<h1>Milk being poured into a mug with coffee, creating latte art.</h1>
+
+<video muted playsinline>
+    <source src="5.mp4" type="video/mp4">
+</video>
+<h1>Water poured into a coffee filter</h1>
+
+<script>
+const videos = document.querySelectorAll("video");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const video = entry.target;
+
+        if (entry.isIntersecting) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+}, {
+    threshold: 0.7
+});
+
+videos.forEach(video => observer.observe(video));
+</script>
+
+</body>
+</html>

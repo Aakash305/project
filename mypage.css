@@ -1,0 +1,15 @@
+body{
+    background-color:rgb(49, 117, 138);
+    font-family:"book title";
+}
+h1{
+    color:rgb(96, 96, 204);
+    background-color:rgb(236, 231, 78);
+    background-color: rgb(241, 174, 48);
+    text-align:center;
+}
+p{
+    color:rgb(230, 189, 189);
+    font-size:22px;
+    text-align:justify;
+}
